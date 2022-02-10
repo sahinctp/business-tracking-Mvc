@@ -1,0 +1,24 @@
+﻿@model MvcFirmaCagri.Models.Entity.TblMesajlar
+@{
+    ViewBag.Title = "YeniMesaj";
+    Layout = "~/Views/Shared/FirmaLayout.cshtml";
+}
+
+@using (Html.BeginForm("YeniMesaj", "Default", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Alıcı Firma")
+    @Html.TextBoxFor(z => z.Alici, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Konu")
+    @Html.TextBoxFor(z => z.Konu, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Mesaj")
+    @Html.PasswordFor(z => z.Mesaj, new { @class = "form-control" })
+    
+    <br />
+    <button class="btn btn-primary">Mesaj Gönder</button>
+}
+
